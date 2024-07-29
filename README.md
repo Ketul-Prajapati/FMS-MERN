@@ -44,11 +44,11 @@ Try it live on [csproconnect.me](https://csproconnect.me) using the default cred
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/yourusername/faculty-management-system.git
+    git clone https://github.com/Ketul-Prajapati/FMS-Web.git
     ```
 2. **Navigate to the project directory:**
     ```bash
-    cd faculty-management-system
+    cd FMS-Web
     ```
 3. **Frontend Setup:**
     - Navigate to the frontend directory:
