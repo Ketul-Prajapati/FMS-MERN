@@ -22,7 +22,7 @@ The **Faculty Management System** is designed to streamline departmental tasks, 
 
 ## Tech Stack
 - **Frontend:** React.js
-- **Backend:** Spring Boot
+- **Backend:** Node.js,Express.js
 - **Database:** MongoDB
 - **Storage:** Firebase
 
@@ -33,7 +33,7 @@ The **Faculty Management System** is designed to streamline departmental tasks, 
 - **Improved Productivity:** Reduce administrative overhead and enhance resource allocation.
 
 ## Live Demo
-Try it live on [csproconnect.tech](https://csproconnect.tech) using the default credentials:
+Try it live on [csproconnect.me](https://csproconnect.me) using the default credentials:
 - **Username:** 1234
 - **Password:** root
 
@@ -69,13 +69,13 @@ Try it live on [csproconnect.tech](https://csproconnect.tech) using the default 
       ```bash
       cd backend
       ```
-    - Install dependencies and build the project:
+    - Install dependencies:
       ```bash
-      mvn clean install
+      npm install
       ```
-    - Run the Spring Boot application:
+    - Start the Node.js server:
       ```bash
-      mvn spring-boot:run
+      node index.js
       ```
 
 ## Usage
