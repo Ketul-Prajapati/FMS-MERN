@@ -20,7 +20,7 @@ const Profile = () => {
     };
     axios
       .post(
-        `${baseApiURL()}/${router.state.type}/details/getDetails`,
+        `${baseApiURL()}/${router.state.type.toLowerCase()}/details/getDetails`,
         { employeeId: router.state.loginid },
         {
           headers: headers,
@@ -116,9 +116,9 @@ const Profile = () => {
               <p className="text-lg font-normal mb-2">
                 Phone Number: {data[0].phoneNumber}
               </p>
-              <p className="text-lg font-normal mb-2">
+              {/* <p className="text-lg font-normal mb-2">
                 Department: {data[0].department}
-              </p>
+              </p> */}
             </div>
             <button
               className={`${
@@ -164,7 +164,7 @@ const Profile = () => {
           <img
             src={data[0].profile}
             alt="faculty profile"
-            className="h-[200px] w-[200px] object-cover rounded-lg shadow-md"
+            className="h-[15%] w-[15%] object-cover rounded-lg shadow-md"
           />
         </>
       )}

@@ -20,7 +20,7 @@ const Profile = () => {
     };
     axios
       .post(
-        `${baseApiURL()}/${router.state.type}/details/getDetails`,
+        `${baseApiURL()}/${router.state.type.toLowerCase()}/details/getDetails`,
         { employeeId: router.state.loginid },
         {
           headers: headers,
@@ -34,7 +34,7 @@ const Profile = () => {
               fullname: `${response.data.user[0].firstName} ${response.data.user[0].middleName} ${response.data.user[0].lastName}`,
               semester: response.data.user[0].semester,
               enrollmentNo: response.data.user[0].enrollmentNo,
-              branch: response.data.user[0].branch,
+              // branch: response.data.user[0].branch,
             })
           );
         } else {
@@ -53,7 +53,7 @@ const Profile = () => {
     };
     axios
       .post(
-        `${baseApiURL()}/student/auth/login`,
+        `${baseApiURL()}/admin/auth/login`,
         { loginid: router.state.loginid, password: password.current },
         {
           headers: headers,
@@ -78,7 +78,7 @@ const Profile = () => {
     };
     axios
       .post(
-        `${baseApiURL()}/student/auth/update/${id}`,
+        `${baseApiURL()}/admin/auth/update/${id}`,
         { loginid: router.state.loginid, password: password.new },
         {
           headers: headers,
@@ -160,8 +160,8 @@ const Profile = () => {
           </div>
           <img
             src={data.profile}
-            alt="student profile"
-            className="h-[200px] w-[200px] object-cover rounded-lg shadow-md"
+            alt="admin profile"
+            className="h-[15%] w-[15%] object-cover rounded-lg shadow-md"
           />
         </>
       )}

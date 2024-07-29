@@ -23,18 +23,20 @@ router.post("/getDetails", async (req, res) => {
 
 router.post("/addDetails", async (req, res) => {
   try {
-    let user = await facultyDetails.findOne(req.body);
+    let user = await facultyDetails.findOne({
+      employeeId: req.body.employeeId,
+    });
     if (user) {
       return res.status(400).json({
         success: false,
         message: "Faculty With This EmployeeId Already Exists",
       });
     }
-    user = await facultyDetails.create(req.body);
+    let newFaculty = await facultyDetails.create(req.body);
     const data = {
       success: true,
       message: "Faculty Details Added!",
-      user,
+      newFaculty
     };
     res.json(data);
   } catch (error) {

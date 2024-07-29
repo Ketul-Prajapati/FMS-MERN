@@ -9,6 +9,10 @@ const Subject = new mongoose.Schema({
     type: Number,
     required: true,
   },
+  semester: {
+    type: Number,
+    required: true,
+  },
   timestamp: {
     type: Date,
     default: Date.now,

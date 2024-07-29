@@ -32,17 +32,19 @@ router.post("/addDetails", async (req, res) => {
         message: "Student With This Enrollment Already Exists",
       });
     }
-    user = await studentDetails.create(req.body);
+
+    let newStudent = await studentDetails.create(req.body);
     const data = {
       success: true,
       message: "Student Details Added!",
-      user,
+      newStudent
     };
     res.json(data);
   } catch (error) {
     res.status(500).json({ success: false, message: "Internal Server Error" });
   }
 });
+
 
 router.post("/updateDetails/:id", async (req, res) => {
   try {

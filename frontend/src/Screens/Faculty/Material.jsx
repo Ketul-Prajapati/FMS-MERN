@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { FiUpload } from "react-icons/fi";
@@ -23,7 +22,7 @@ const Material = () => {
   useEffect(() => {
     toast.loading("Loading Subjects");
     axios
-      .get(`${baseApiURL()}/subject/getSubject`)
+      .post(`${baseApiURL()}/subject/getSubject`)
       .then((response) => {
         toast.dismiss();
         if (response.data.success) {
@@ -65,7 +64,7 @@ const Material = () => {
       );
     };
     file && uploadFileToStorage(file);
-  }, [file]);
+  }, [file,selected]);
 
   const addMaterialHandler = () => {
     toast.loading("Adding Material");

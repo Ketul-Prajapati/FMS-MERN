@@ -25,19 +25,11 @@ const studentDetails = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  semester: {
-    type: Number,
-    required: true,
-  },
-  branch: {
+  class: {
     type: String,
     required: true,
   },
   gender: {
-    type: String,
-    required: true,
-  },
-  profile: {
     type: String,
     required: true,
   },

@@ -25,10 +25,10 @@ const facultyDetails = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  department: {
-    type: String,
-    required: true,
-  },
+  // department: {
+  //   type: String,
+  //   required: true,
+  // },
   gender: {
     type: String,
     required: true,

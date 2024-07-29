@@ -2,9 +2,9 @@ const express = require("express");
 const router = express.Router();
 const Subject = require("../models/Other/Subject");
 
-router.get("/getSubject", async (req, res) => {
+router.post("/getSubject", async (req, res) => {
   try {
-    let subject = await Subject.find();
+    let subject = await Subject.find(req.body);
     if (!subject) {
       return res
         .status(400)
@@ -23,7 +23,7 @@ router.get("/getSubject", async (req, res) => {
 });
 
 router.post("/addSubject", async (req, res) => {
-  let { name, code } = req.body;
+  let { name, code ,semester} = req.body;
   try {
     let subject = await Subject.findOne({ code });
     if (subject) {
@@ -34,6 +34,7 @@ router.post("/addSubject", async (req, res) => {
     await Subject.create({
       name,
       code,
+      semester
     });
     const data = {
       success: true,
